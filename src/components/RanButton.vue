@@ -1,5 +1,6 @@
 <template>
   <button
+    @click="handleClick"
     :type="nativeType"
     :disabled="loading || disabled"
     :class="[
@@ -43,6 +44,11 @@
       circle: {
         type: Boolean,
         default: false
+      }
+    },
+    methods:{
+      handleClick(evt){
+        this.$emit('click', evt);
       }
     }
   }
